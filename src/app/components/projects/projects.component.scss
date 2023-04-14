@@ -1,0 +1,28 @@
+.projects {
+  text-align: center;
+  background: var(--deep-blue);
+  padding: 40px 40px;
+}
+
+.project-title {
+  font-size: 2rem;
+  background: var(--dark-grey);
+  padding: 1rem;
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 5px 5px 7px 1px var(--dark-grey);
+
+  &:hover .code {
+    color: var(--deep-red);
+  }
+}
+.code {
+  color: var(--dark-grey);
+  transition: color 0.4s ease-out;
+}
+.project-header {
+  text-decoration: underline;
+  text-decoration-color: var(--deep-red);
+  margin-bottom: 20px;
+  font-size: 2rem;
+}

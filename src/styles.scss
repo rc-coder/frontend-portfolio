@@ -1,4 +1,34 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+:root {
+  --blue: #00c3e3;
+  --deep-blue: #0885a5;
+  --red: #ff4554;
+  --deep-red: #e60012;
+  --grey: #989898;
+  --dark-grey: #414548;
+  --black: #221f24;
+  --orange: #faa005;
+  --purple: #ba00e6;
+  --green: #82ff96;
+  --white: #f0f0f0;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 10px;
+  color: var(--white);
+  line-height: 1.4;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
