@@ -1,3 +1,60 @@
-.sidenav {
+.drawer-container {
+  width: 100%;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  @media screen and (max-width: 600px) {
+  }
+}
+
+main {
+  overflow-y: auto;
+  width: 100%;
+}
+
+.wrapper {
   width: 200px;
+  border-right: 0.5px var(--grey) solid;
+  background-color: var(--dark-grey);
+  height: 100%;
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+}
+
+.sidenav-container {
+  position: fixed;
+  left: 0;
+  right: auto;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  border-right: 0.5px var(--grey) solid;
+  background-color: var(--dark-grey);
+  height: auto;
+  display: none;
+  @media screen and (max-width: 600px) {
+    display: block;
+  }
+}
+
+.toggle-button {
+  position: fixed;
+  top: 20px;
+  margin-left: 10px;
+  height: 65px;
+  border-radius: 50px;
+  background-image: url("../assets/photos/profilePic.jpg");
+  background-size: cover;
+  border: 5px solid var(--black);
+  visibility: hidden;
+  z-index: 5;
+  @media screen and (max-width: 600px) {
+    visibility: visible;
+  }
 }

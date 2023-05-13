@@ -1,0 +1,29 @@
+.photo-container {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  padding: 10px;
+}
+
+.profile-pic {
+  background-image: url("../../../assets/photos/profilePic.jpg");
+  background-size: cover;
+  height: 150px;
+  width: 150px;
+  margin-top: 10px;
+  border: 1px solid #fff;
+}
+
+.profile-title {
+  margin-top: -10px;
+}
+
+.profile-subtitle {
+  color: var(--grey);
+  font-style: italic;
+  font-weight: 200;
+}
+
+a {
+  border: red;
+}

@@ -1,0 +1,29 @@
+<app-photo></app-photo>
+<div class="nav-container">
+  <mat-nav-list class="navbar">
+    <mat-list-item *ngFor="let item of menuList">
+      <a href="{{ item.url }}" class="nav-link">{{ item.nombre }}</a>
+    </mat-list-item>
+    <div class="icon-container">
+      <div class="social-icons">
+        <a href="" class="icon">
+          <fa-icon [icon]="faLinkedIn" size="lg"></fa-icon
+        ></a>
+        <a href="" class="icon">
+          <fa-icon [icon]="faGithub" size="lg"></fa-icon
+        ></a>
+      </div>
+      <div class="login-container">
+        <a href="Login">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="login icon"
+            title="Login"
+            fontIcon="login"
+            class="login-icon"
+          ></mat-icon
+        ></a>
+      </div>
+    </div>
+  </mat-nav-list>
+</div>

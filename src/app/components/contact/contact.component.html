@@ -1,42 +1,45 @@
-<div class="contactContainer">
-  <div class="contactHeader">
-    <h2 class="contactTitle">¡Trabajemos juntos!</h2>
-    <p class="text-white mb-5" style="font-style: italic">
-      Unidos podemos mas, contactame e iniciemos un nuevo proyecto juntos!
-    </p>
-    <mat-divider class="divider"></mat-divider>
-    <br />
-  </div>
-  <div class="formContainer">
-    <mat-form-field class="input" appearance="fill">
-      <mat-label>Nombre</mat-label>
-      <input matInput placeholder="Tu nombre" />
-      <mat-hint align="start">O un algun apodo genial</mat-hint>
-    </mat-form-field>
+<section id="contact">
+  <div class="wrapper">
+    <div class="contact-header">
+      <h2 class="contact-title">¡Trabajemos juntos!</h2>
+      <p class="text-white mb-5" style="font-style: italic">
+        Unidos podemos mas, contactame e iniciemos un nuevo proyecto juntos!
+      </p>
+      <mat-divider class="divider"></mat-divider>
+      <br />
+    </div>
+    <div class="form-container">
+      <form #form="ngForm">
+        <mat-form-field class="input" appearance="fill">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Tu nombre" />
+          <mat-hint align="start">O un algun apodo genial</mat-hint>
+        </mat-form-field>
+        <mat-form-field class="input" appearance="fill">
+          <mat-label>Ingresa tu email</mat-label>
+          <input
+            type="email"
+            matInput
+            [formControl]="email"
+            required
+            placeholder="tuemail@ejemplo.com"
+          />
 
-    <mat-form-field class="input" appearance="fill">
-      <mat-label>Ingresa tu email</mat-label>
-      <input
-        type="email"
-        matInput
-        [formControl]="email"
-        required
-        placeholder="tuemail@ejemplo.com"
-      />
-      <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
-      <mat-hint align="start">Ya sabes... para contactarte</mat-hint>
-    </mat-form-field>
+          <mat-hint align="start">Ya sabes... para contactarte</mat-hint>
+        </mat-form-field>
 
-    <mat-form-field class="input" appearance="fill">
-      <mat-label>Deja tu mensaje</mat-label>
-      <textarea
-        matInput
-        cdkTextareaAutosize
-        #autosize="cdkTextareaAutosize"
-        cdkAutosizeMinRows="1"
-        cdkAutosizeMaxRows="5"
-      ></textarea>
-      <mat-hint align="start">Puede ser solo un saludo</mat-hint>
-    </mat-form-field>
+        <mat-form-field class="input" appearance="fill">
+          <mat-label>Deja tu mensaje</mat-label>
+          <textarea
+            matInput
+            cdkTextareaAutosize
+            #autosize="cdkTextareaAutosize"
+            cdkAutosizeMinRows="1"
+            cdkAutosizeMaxRows="5"
+          ></textarea>
+          <mat-hint align="start">Puede ser solo un saludo</mat-hint>
+        </mat-form-field>
+      </form>
+    </div>
   </div>
-</div>
+</section>

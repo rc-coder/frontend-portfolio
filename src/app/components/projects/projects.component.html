@@ -1,14 +1,20 @@
-<div class="projects">
-  <h2 class="project-header">Mis primeros proyectos</h2>
-  <mat-grid-list cols="1" rowHeight="80px">
-    <mat-grid-tile *ngFor="let project of projects">
-      <a href="{{ project.link }}" target="_blank">
-        <img class="project-img" src="{{ project.img }}" />
-        <p class="project-title">
-          <span class="code">&lt;</span> {{ project.name }}
-          <span class="code">&#47;&gt;</span>
-        </p>
-      </a>
-    </mat-grid-tile>
-  </mat-grid-list>
-</div>
+<section id="projects">
+  <div class="projects-container">
+    <div class="wrapper">
+      <div class="projects-title"><h2>Mis primeros proyectos</h2></div>
+      <mat-divider class="divider"></mat-divider>
+      <br />
+      <mat-grid-list cols="1" rowHeight="80px">
+        <mat-grid-tile *ngFor="let project of projects">
+          <a href="{{ project.link }}" target="_blank">
+            <img class="project-img" src="{{ project.img }}" />
+            <p class="project-name">
+              <span class="code">&lt;</span> {{ project.name }}
+              <span class="code">&#47;&gt;</span>
+            </p>
+          </a>
+        </mat-grid-tile>
+      </mat-grid-list>
+    </div>
+  </div>
+</section>

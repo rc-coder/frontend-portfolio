@@ -1,19 +1,102 @@
-<section id="welcome-section" class="welcome-section">
-  <h1 class="name">Hi, I'm Ricardo</h1>
-  <p class="title">A trainee developer</p>
-  <section class="about">
-    <p>
-      I recently discovered a passion for programming, so for a month I've been
-      training myself in HTML and CSS basics in fcc. I plan to take a coding
-      bootcamp, learn other languajes and keep gaining experience. My final goal
-      is to turn myself into a full-stack web developer, and make a career out
-      of programming.
-    </p>
-    <br />
-    <p>
-      I will keep updating this page with my comings an goings in the
-      programming world, so come join me in my journey to become
-      <s>the very best, like no one ever was</s> a web developer.
-    </p>
-  </section>
+<section id="about">
+  <div class="wrapper">
+    <div class="about-container">
+      <main class="about-me">
+        <div class="about-title">
+          <h2>Un poco sobre mi</h2>
+        </div>
+        <mat-divider class="divider"></mat-divider> <br />
+        <div class="text">
+          <p>
+            I recently discovered a passion for programming, so for a month I've
+            been training myself in HTML and CSS basics in fcc. I plan to take a
+            coding bootcamp, learn other languajes and keep gaining experience.
+            My final goal is to turn myself into a full-stack web developer, and
+            make a career out of programming.
+          </p>
+          <br />
+          <p>
+            I will keep updating this page with my comings an goings in the
+            programming world, so come join me in my journey to become
+            <s>the very best, like no one ever was</s> a web developer.
+          </p>
+        </div>
+      </main>
+      <aside class="technologies-grid">
+        <mat-card class="tech-card">
+          <mat-card-title
+            ><fa-icon [icon]="faGlobe" size="lg"></fa-icon
+          ></mat-card-title>
+          <mat-card-subtitle class="card-title"
+            >Desarrolo web <mat-divider class="card-divider"></mat-divider
+          ></mat-card-subtitle>
+
+          <mat-card-content>
+            <div>
+              <p>Html</p>
+              <fa-icon [icon]="faHtml5"></fa-icon>
+            </div>
+            <div>
+              <p>Css</p>
+              <fa-icon [icon]="faCss3"></fa-icon>
+            </div>
+            <div>
+              <p>Javascript</p>
+              <fa-icon [icon]="faJs"></fa-icon>
+            </div>
+            <div>
+              <p>Sass</p>
+              <fa-icon [icon]="faSass"></fa-icon>
+            </div>
+            <div>
+              <p>Styled Components</p>
+              <fa-icon [icon]="faPaintbrush"></fa-icon>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <mat-card>
+          <mat-card-title
+            ><fa-icon [icon]="faScrewdriverWrench" size="lg"></fa-icon
+          ></mat-card-title>
+          <mat-card-subtitle>Frameworks</mat-card-subtitle>
+          <mat-card-content>
+            <div>
+              <p>React<fa-icon [icon]="faReact"></fa-icon></p>
+            </div>
+            <div>
+              <p>Angular<fa-icon [icon]="faAngular"></fa-icon></p>
+            </div>
+            <div>
+              <p>Spring Boot<fa-icon [icon]="faPowerOff"></fa-icon></p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="tech-card">
+          <mat-card-title
+            ><fa-icon [icon]="faDatabase" size="lg"></fa-icon
+          ></mat-card-title>
+          <mat-card-subtitle>Base de datos</mat-card-subtitle>
+          <mat-card-content>
+            <div>
+              <p>MySql<fa-icon [icon]="faDatabase"></fa-icon></p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <mat-card class="tech-card">
+          <mat-card-title
+            ><fa-icon [icon]="faCodeBranch" size="lg"></fa-icon
+          ></mat-card-title>
+          <mat-card-subtitle>Control de versiones</mat-card-subtitle>
+          <mat-card-content>
+            <div>
+              <p>Git<fa-icon [icon]="faGit"></fa-icon></p>
+            </div>
+          </mat-card-content>
+        </mat-card>
+        <!-- <ul *ngFor="let tech of technologies">
+          <li>{{ tech }}</li>
+        </ul> -->
+      </aside>
+    </div>
+  </div>
 </section>

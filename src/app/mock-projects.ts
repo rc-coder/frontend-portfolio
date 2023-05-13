@@ -27,6 +27,18 @@ export const projectList: Project[] = [
   },
   {
     id: 5,
+    name: 'Calculadora Js',
+    img: '',
+    link: 'https://calculator-js-ebon.vercel.app/',
+  },
+  {
+    id: 6,
+    name: 'Mock concert page',
+    img: '',
+    link: 'https://lassospecha-l8mud4mhl-rc-coder.vercel.app/',
+  },
+  {
+    id: 7,
     name: 'React Eshop',
     img: '',
     link: 'https://kosuri-integrador-nucba.vercel.app/',

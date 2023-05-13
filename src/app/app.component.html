@@ -1,11 +1,16 @@
-<mat-drawer-container>
-  <mat-drawer #sidenav mode="side" class="sidenav">Foto</mat-drawer>
-  <mat-drawer-content>
-    <button mat-button (click)="sidenav.toggle()">Toggle</button>
-    <app-about></app-about>
-    <app-projects></app-projects>
-    <app-contact></app-contact
-  ></mat-drawer-content>
+<mat-drawer-container [hasBackdrop]="backdrop" class="drawer-container">
+  <mat-drawer #sidenav mode="over" class="sidenav-container" [opened]="open">
+    <app-sidenav></app-sidenav>
+  </mat-drawer>
+  <div class="main-container">
+    <button
+      mat-button
+      (click)="sidenav.toggle()"
+      class="toggle-button"
+    ></button>
+    <div class="wrapper">
+      <aside><app-sidenav></app-sidenav></aside>
+    </div>
+    <main><router-outlet></router-outlet></main>
+  </div>
 </mat-drawer-container>
-
-<router-outlet></router-outlet>
