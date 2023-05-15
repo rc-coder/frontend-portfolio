@@ -8,10 +8,16 @@ import { DatabaseService } from 'src/app/services/database.service';
   styleUrls: ['./projects.component.scss'],
 })
 export class ProjectsComponent {
-  projects: any;
-  projectsService = inject(DatabaseService);
+  projects: any[] = [];
+  databaseService = inject(DatabaseService);
 
   ngOnInit() {
-    this.projects = this.projectsService.getProyectos();
+    this.cargarDatos();
+  }
+
+  cargarDatos() {
+    this.databaseService.getProyectos().subscribe((data) => {
+      this.projects = data;
+    });
   }
 }

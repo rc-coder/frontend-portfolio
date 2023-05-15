@@ -9,16 +9,22 @@ import { persona } from '../mock-persona';
   providedIn: 'root',
 })
 export class DatabaseService {
-  private databaseUrl = 'https://portfoliodb-backend.onrender.com/api/db';
+  // private databaseUrl = 'https://portfoliodb-backend.onrender.com/api/db';
   constructor(private http: HttpClient) {}
   public getPersona(): Observable<any> {
-    return this.http.get<any>(this.databaseUrl + '/ver/persona');
+    return this.http.get<any>(
+      'https://portfoliodb-backend.onrender.com/api/db/ver/persona'
+    );
   }
   public getProyectos(): Observable<any> {
-    return this.http.get<any>(this.databaseUrl + '/ver/proyecto');
+    return this.http.get<any>(
+      'https://portfoliodb-backend.onrender.com/api/db/ver/proyecto'
+    );
   }
   public getTecnologias(): Observable<any> {
-    return this.http.get<any>(this.databaseUrl + 'ver/tecnologia');
+    return this.http.get<any>(
+      'https://portfoliodb-backend.onrender.com/api/db/ver/tecnologia'
+    );
   }
   // getTecnologias(): Tecnologia[] {
   //   return tecnologiasList;

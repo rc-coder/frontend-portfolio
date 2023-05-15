@@ -25,11 +25,17 @@ import {
   styleUrls: ['./skills.component.scss'],
 })
 export class SkillsComponent {
-  tecnologias: any;
+  tecnologias: any[] = [];
   databaseService = inject(DatabaseService);
 
   ngOnInit(): void {
-    this.tecnologias = this.databaseService.getTecnologias();
+    this.cargarDatos();
+  }
+
+  cargarDatos() {
+    this.databaseService.getTecnologias().subscribe((data) => {
+      this.tecnologias = data;
+    });
   }
 
   faHtml5 = faHtml5;
