@@ -1,73 +1,46 @@
 <section>
   <div class="wrapper">
-    <div class="text-container">
-      <main>
-        <div class="text-title">
-          <h2>Mis habilidades y experiencia</h2>
-        </div>
-        <mat-divider class="divider"></mat-divider> <br />
-        <div class="text">
-          <p>
-            I recently discovered a passion for programming, so for a month I've
-            been training myself in HTML and CSS basics in fcc. I plan to take a
-            coding bootcamp, learn other languajes and keep gaining experience.
-            My final goal is to turn myself into a full-stack web developer, and
-            make a career out of programming.
+    <main>
+      <div class="text-title">
+        <h1>Mis habilidades y experiencia</h1>
+      </div>
+      <mat-divider class="divider"></mat-divider> <br />
+      <div class="text">
+        <p>
+          En estos últimos dos años me he estado capacitando de manera autónoma
+          html y css en freecodecamp, he aprendido a trabajar en frontend con
+          React, procesadores de css como sass y librerias como Styled
+          components, boostrap y redux toolkit en el bootcamp de Nucba. Y
+          recientemente estoy cursando en ArgentinaPrograma en donde he
+          aprendido a trabajar con el framework Angular y su módulo angular
+          material para el frontend y en backend con SQL y MySQL para el
+          almacenamiento y procesamiento de datos; incluso un poco de jwt para
+          la transmisión de información de forma segura.
+        </p>
+      </div>
+    </main>
+    <aside>
+      <div class="tec-container">
+        <div *ngFor="let tecnologia of tecnologias">
+          <p class="project-name">
+            <span class="code">&lt;</span> {{ tecnologia.nombre }}
+            <span class="code">&#47;&gt;</span>
           </p>
-          <br />
-          <p>
-            I will keep updating this page with my comings an goings in the
-            programming world, so come join me in my journey to become
-            <s>the very best, like no one ever was</s> a web developer.
-          </p>
         </div>
-      </main>
-      <aside>
-        <div class="skills-wrapper">
-          <div class="skills-container">
-            <div class="skills">
-              <div class="details">
-                <span>Front-end</span>
-              </div>
-              <div class="bar">
-                <div id="Front-bar"></div>
-              </div>
-            </div>
-            <div class="skills">
-              <div class="details">
-                <span>Back-end</span>
-              </div>
-              <div class="bar">
-                <div id="Back-bar"></div>
-              </div>
-            </div>
-            <div class="skills">
-              <div class="details">
-                <span>ReactJs</span>
-              </div>
-              <div class="bar">
-                <div id="React-bar"></div>
-              </div>
-            </div>
-            <div class="skills">
-              <div class="details">
-                <span>Angular</span>
-              </div>
-              <div class="bar">
-                <div id="Angular-bar"></div>
-              </div>
-            </div>
-            <div class="skills">
-              <div class="details">
-                <span>Sql</span>
-              </div>
-              <div class="bar">
-                <div id="Sql-bar"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </aside>
-    </div>
+      </div>
+
+      <div class="icon-list">
+        <fa-icon [icon]="faHtml5" size="lg"></fa-icon>
+        <fa-icon [icon]="faCss3" size="lg"></fa-icon>
+        <fa-icon [icon]="faJs" size="lg"></fa-icon>
+        <fa-icon [icon]="faReact" size="lg"></fa-icon>
+        <fa-icon [icon]="faAngular" size="lg"></fa-icon>
+        <fa-icon [icon]="faSass" size="lg"></fa-icon>
+        <fa-icon [icon]="faGit" size="lg"></fa-icon>
+        <fa-icon [icon]="faDatabase" size="lg"></fa-icon>
+        <fa-icon [icon]="faPaintbrush" size="lg"></fa-icon>
+        <fa-icon [icon]="faPowerOff" size="lg"></fa-icon>
+      </div>
+    </aside>
   </div>
 </section>

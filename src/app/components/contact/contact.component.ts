@@ -8,6 +8,8 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class ContactComponent {
   email = new FormControl('', [Validators.required, Validators.email]);
+  message = new FormControl('', [Validators.required]);
+  name = new FormControl('', [Validators.required]);
 
   getErrorMessage() {
     if (this.email.hasError('required')) {

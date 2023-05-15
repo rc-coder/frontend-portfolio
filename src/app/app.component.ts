@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, Input, inject } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ export class AppComponent {
   public backdrop = false;
   public getScreenWidth: any;
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getScreenWidth = window.innerWidth;
     if (this.getScreenWidth <= 600) {
       this.open = false;

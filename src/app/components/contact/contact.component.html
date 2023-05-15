@@ -3,43 +3,52 @@
     <div class="contact-header">
       <h2 class="contact-title">¡Trabajemos juntos!</h2>
       <p class="text-white mb-5" style="font-style: italic">
-        Unidos podemos mas, contactame e iniciemos un nuevo proyecto juntos!
+        Unidos podemos mas, contactame e iniciemos un nuevo proyecto
       </p>
       <mat-divider class="divider"></mat-divider>
       <br />
     </div>
-    <div class="form-container">
-      <form #form="ngForm">
-        <mat-form-field class="input" appearance="fill">
-          <mat-label>Nombre</mat-label>
-          <input matInput placeholder="Tu nombre" />
-          <mat-hint align="start">O un algun apodo genial</mat-hint>
-        </mat-form-field>
-        <mat-form-field class="input" appearance="fill">
-          <mat-label>Ingresa tu email</mat-label>
-          <input
-            type="email"
-            matInput
-            [formControl]="email"
-            required
-            placeholder="tuemail@ejemplo.com"
-          />
+    <main>
+      <div class="form-container">
+        <form #form="ngForm">
+          <mat-form-field class="input" appearance="fill">
+            <mat-label>Nombre</mat-label>
+            <input matInput [formControl]="name" placeholder="Tu nombre" />
+            <mat-hint align="start">O un algun apodo genial</mat-hint>
+          </mat-form-field>
+          <mat-form-field class="input" appearance="fill">
+            <mat-label>Ingresa tu email</mat-label>
+            <input
+              type="email"
+              matInput
+              [formControl]="email"
+              required
+              placeholder="tuemail@ejemplo.com"
+            />
 
-          <mat-hint align="start">Ya sabes... para contactarte</mat-hint>
-        </mat-form-field>
+            <mat-hint align="start">Ya sabes... para contactarte</mat-hint>
+            <mat-error *ngIf="email.invalid">{{ getErrorMessage() }}</mat-error>
+          </mat-form-field>
 
-        <mat-form-field class="input" appearance="fill">
-          <mat-label>Deja tu mensaje</mat-label>
-          <textarea
-            matInput
-            cdkTextareaAutosize
-            #autosize="cdkTextareaAutosize"
-            cdkAutosizeMinRows="1"
-            cdkAutosizeMaxRows="5"
-          ></textarea>
-          <mat-hint align="start">Puede ser solo un saludo</mat-hint>
-        </mat-form-field>
-      </form>
-    </div>
+          <mat-form-field class="input" appearance="fill">
+            <mat-label>Deja tu mensaje</mat-label>
+            <textarea
+              matInput
+              [formControl]="email"
+              cdkTextareaAutosize
+              #autosize="cdkTextareaAutosize"
+              cdkAutosizeMinRows="1"
+              cdkAutosizeMaxRows="5"
+            ></textarea>
+            <mat-hint align="start">Puede ser solo un saludo</mat-hint>
+            <br />
+            <div></div>
+          </mat-form-field>
+          <button type="submit" mat-raised-button color="primary">
+            Enviar
+          </button>
+        </form>
+      </div>
+    </main>
   </div>
 </section>

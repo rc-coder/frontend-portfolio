@@ -3,13 +3,19 @@ section {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(180deg, var(--dark-grey), var(--black));
+  background: var(--deep-red);
   width: 100%;
   height: 100vh;
 }
 
 .wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   padding: 0 20px 0 20px;
+  @media screen and (max-width: 600px) {
+    flex-direction: column;
+  }
 }
 
 .text-title {
@@ -17,17 +23,21 @@ section {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
+  @media screen and (max-width: 600px) {
+    justify-content: center;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  @media screen and (max-width: 600px) {
+    font-size: 1.9rem;
+  }
 }
 
 .divider {
-  border-top-color: var(--deep-red);
+  border-top-color: var(--black);
   border-top-width: 0.5rem;
-}
-
-.text-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
 }
 
 main {
@@ -35,95 +45,57 @@ main {
   flex-direction: column;
   justify-content: center;
   width: 50%;
+  @media screen and (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 .text {
   margin-top: 30px;
-  text-align: center;
+  text-align: left;
+  @media screen and (max-width: 600px) {
+    margin-top: 3px;
+    text-align: center;
+  }
 }
-
-s {
-  font-style: italic;
-  text-decoration-color: var(--deep-red);
-}
-
-//Meters
 
 aside {
-  width: 50%;
-  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 }
 
-.details {
+aside p {
+  font-size: 1.6rem;
+  @media screen and (max-width: 600px) {
+    font-size: 1.3rem;
+  }
+}
+
+.code {
+  color: var(--black);
+}
+
+.tec-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.icon-list {
   width: 100%;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  margin-bottom: 10px;
+  border-top: 2px solid var(--black);
+  padding-top: 10px;
 }
 
-.bar {
-  position: relative;
-  border: 1px solid var(--deep-blue);
-  background-color: var(--grey);
-}
-
-.bar div {
-  position: relative;
-  width: 0;
-  height: 4px;
-  border-radius: 10px;
-}
-
-.skills:not(:last-child) {
-  margin-bottom: 30px;
-}
-
-#Front-bar {
-  background-color: var(--red);
-  animation: front-fill 2s forwards;
-}
-@keyframes front-fill {
-  100% {
-    width: 70%;
-  }
-}
-
-#Back-bar {
-  background-color: var(--orange);
-  animation: back-fill 2s forwards;
-}
-@keyframes back-fill {
-  100% {
-    width: 20%;
-  }
-}
-
-#React-bar {
-  background-color: var(--green);
-  animation: react-fill 2s forwards;
-}
-@keyframes react-fill {
-  100% {
-    width: 60%;
-  }
-}
-
-#Angular-bar {
-  background-color: var(--purple);
-  animation: angular-fill 2s forwards;
-}
-@keyframes angular-fill {
-  100% {
-    width: 50%;
-  }
-}
-
-#Sql-bar {
-  background-color: var(--blue);
-  animation: sql-fill 2s forwards;
-}
-@keyframes sql-fill {
-  100% {
-    width: 20%;
+fa-icon {
+  &:hover {
+    color: var(--deep-blue);
   }
 }

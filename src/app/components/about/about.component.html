@@ -3,99 +3,73 @@
     <div class="about-container">
       <main class="about-me">
         <div class="about-title">
-          <h2>Un poco sobre mi</h2>
+          <h1>Un poco sobre mi</h1>
         </div>
         <mat-divider class="divider"></mat-divider> <br />
         <div class="text">
           <p>
-            I recently discovered a passion for programming, so for a month I've
-            been training myself in HTML and CSS basics in fcc. I plan to take a
-            coding bootcamp, learn other languajes and keep gaining experience.
-            My final goal is to turn myself into a full-stack web developer, and
-            make a career out of programming.
-          </p>
-          <br />
-          <p>
-            I will keep updating this page with my comings an goings in the
-            programming world, so come join me in my journey to become
-            <s>the very best, like no one ever was</s> a web developer.
+            Soy Ricardo, un chef, sushiman, gamer que un día quiso cambiar su
+            vida y aventurarse en algo que le apasiona "programar" ¿mi meta? Es
+            simple, llegar a ser un gran programador, en estos dos años de
+            capacitación he descubierto un mundo de posibilidades y eso me ha
+            motivado a querer más. Una de mis aspiraciones, siempre ha sido
+            crear un videojuego y considero que todo lo que he aprendido en
+            estos años me ayudaran a lograrlo. En este tiempo de capacitación he
+            podido aventurarme en diferentes tecnologías que me han gustado,
+            emocionado y divertido al trabajarlas. Algo que me ha gustado es la
+            librería react y el framework Angular, ya que estoy inclinándome más
+            hacia el frontend sin embargo soy una persona que siempre esta en
+            busca de conocimiento y no me limito, por lo que ahora quiero
+            profundizar más en el backend, que es algo que me genera mucho
+            interés.
           </p>
         </div>
       </main>
-      <aside class="technologies-grid">
-        <mat-card class="tech-card">
-          <mat-card-title
-            ><fa-icon [icon]="faGlobe" size="lg"></fa-icon
-          ></mat-card-title>
-          <mat-card-subtitle class="card-title"
-            >Desarrolo web <mat-divider class="card-divider"></mat-divider
-          ></mat-card-subtitle>
-
-          <mat-card-content>
-            <div>
-              <p>Html</p>
-              <fa-icon [icon]="faHtml5"></fa-icon>
+      <aside>
+        <div class="skills-wrapper">
+          <div class="skills-container">
+            <div class="skills">
+              <div class="details">
+                <span>Front-end</span>
+              </div>
+              <div class="bar">
+                <div id="Front-bar"></div>
+              </div>
             </div>
-            <div>
-              <p>Css</p>
-              <fa-icon [icon]="faCss3"></fa-icon>
+            <div class="skills">
+              <div class="details">
+                <span>Back-end</span>
+              </div>
+              <div class="bar">
+                <div id="Back-bar"></div>
+              </div>
             </div>
-            <div>
-              <p>Javascript</p>
-              <fa-icon [icon]="faJs"></fa-icon>
+            <div class="skills">
+              <div class="details">
+                <span>ReactJs</span>
+              </div>
+              <div class="bar">
+                <div id="React-bar"></div>
+              </div>
             </div>
-            <div>
-              <p>Sass</p>
-              <fa-icon [icon]="faSass"></fa-icon>
+            <div class="skills">
+              <div class="details">
+                <span>Angular</span>
+              </div>
+              <div class="bar">
+                <div id="Angular-bar"></div>
+              </div>
             </div>
-            <div>
-              <p>Styled Components</p>
-              <fa-icon [icon]="faPaintbrush"></fa-icon>
+            <div class="skills">
+              <div class="details">
+                <span>Sql</span>
+              </div>
+              <div class="bar">
+                <div id="Sql-bar"></div>
+              </div>
             </div>
-          </mat-card-content>
-        </mat-card>
-        <mat-card>
-          <mat-card-title
-            ><fa-icon [icon]="faScrewdriverWrench" size="lg"></fa-icon
-          ></mat-card-title>
-          <mat-card-subtitle>Frameworks</mat-card-subtitle>
-          <mat-card-content>
-            <div>
-              <p>React<fa-icon [icon]="faReact"></fa-icon></p>
-            </div>
-            <div>
-              <p>Angular<fa-icon [icon]="faAngular"></fa-icon></p>
-            </div>
-            <div>
-              <p>Spring Boot<fa-icon [icon]="faPowerOff"></fa-icon></p>
-            </div>
-          </mat-card-content>
-        </mat-card>
-        <mat-card class="tech-card">
-          <mat-card-title
-            ><fa-icon [icon]="faDatabase" size="lg"></fa-icon
-          ></mat-card-title>
-          <mat-card-subtitle>Base de datos</mat-card-subtitle>
-          <mat-card-content>
-            <div>
-              <p>MySql<fa-icon [icon]="faDatabase"></fa-icon></p>
-            </div>
-          </mat-card-content>
-        </mat-card>
-        <mat-card class="tech-card">
-          <mat-card-title
-            ><fa-icon [icon]="faCodeBranch" size="lg"></fa-icon
-          ></mat-card-title>
-          <mat-card-subtitle>Control de versiones</mat-card-subtitle>
-          <mat-card-content>
-            <div>
-              <p>Git<fa-icon [icon]="faGit"></fa-icon></p>
-            </div>
-          </mat-card-content>
-        </mat-card>
-        <!-- <ul *ngFor="let tech of technologies">
-          <li>{{ tech }}</li>
-        </ul> -->
+          </div>
+        </div>
       </aside>
     </div>
   </div>

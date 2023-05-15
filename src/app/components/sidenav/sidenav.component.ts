@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 
 @Component({
