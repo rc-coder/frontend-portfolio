@@ -1,5 +1,13 @@
 section {
-  background: var(--deep-blue);
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #0885a5 32px
+    ),
+    repeating-linear-gradient(#00c3e3, #00c3e3);
+  background-color: #0885a5;
+
+  border-bottom: 2px solid var(--grey);
   width: 100%;
   height: 100vh;
   display: flex;
@@ -24,35 +32,11 @@ section {
 
 .projects-title {
   display: flex;
-  justify-content: left;
+  justify-content: center;
 }
 
 h1 {
   font-size: 3rem;
-}
-
-.project-name {
-  display: flex;
-  justify-content: center;
-  font-size: 2rem;
-  background: var(--dark-grey);
-  padding: 1rem;
-  width: 100%;
-  border-radius: 0.5rem;
-  transition-property: box-shadow margin-top;
-  transition-duration: 0.2s;
-  &:hover {
-    box-shadow: 0px 0px 15px 0px var(--dark-grey);
-    margin-top: -2px;
-  }
-
-  &:hover .code {
-    color: var(--deep-red);
-  }
-
-  @media screen and (max-width: 600px) {
-    font-size: 2rem;
-  }
 }
 
 .code {
@@ -62,10 +46,11 @@ h1 {
 
 .project-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
   height: 50%;
-  @media screen and (max-width: 600px) {
-    grid-template-columns: 1fr;
+  @media screen and (max-width: 980px) {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   }
 }
 
@@ -79,13 +64,51 @@ h1 {
   transition-duration: 0.1s;
 }
 
-.project-img {
-  background-size: cover;
-  height: 100px;
-  width: 100px;
-  border: 1px solid #fff;
-
+.card {
+  max-width: 250px;
+  border-radius: 10px;
+  transition: all 0.5s;
+  background: rgba(65, 69, 72, 0.6);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   @media screen and (max-width: 600px) {
-    display: none;
+    height: 150px;
+  }
+
+  & .card-title {
+    display: flex;
+    justify-content: center;
+    font-style: italic;
+    margin-top: 10px;
+    transition: all 0.5s;
+    font-size: small;
+    width: 100%;
+    @media screen and (max-width: 700px) {
+      display: none;
+    }
+  }
+
+  & img {
+    object-fit: cover;
+    padding: 20px;
+    width: 100%;
+    @media screen and (max-width: 600px) {
+      padding: 20px;
+    }
+  }
+
+  & p {
+    text-align: center;
+  }
+
+  &:hover {
+    transform: translate(3px, -3px);
+    border: 2px solid var(--deep-red);
+    opacity: 1;
+
+    .code {
+      color: var(--deep-red);
+    }
   }
 }

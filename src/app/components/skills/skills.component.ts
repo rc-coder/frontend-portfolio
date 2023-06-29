@@ -28,6 +28,19 @@ export class SkillsComponent {
   tecnologias: any[] = [];
   databaseService = inject(DatabaseService);
 
+  tecnologiasDob: any[] = [
+    'Styled Components',
+    'Styled Components',
+    'Styled Components',
+    'Styled',
+    'Styled Components',
+    'Styled Components',
+    'Styled Components',
+    'Styled Components',
+    'Styled Components',
+    'Styled Components',
+  ];
+
   ngOnInit(): void {
     this.cargarDatos();
   }

@@ -9,6 +9,34 @@ import { DatabaseService } from 'src/app/services/database.service';
 })
 export class ProjectsComponent {
   projects: any[] = [];
+
+  projectsDob: any[] = [
+    {
+      link: '',
+      nombre: 'Technical documentation',
+      img: '../../../assets/photos/reactPic.jpeg',
+    },
+    {
+      link: '',
+      nombre: 'Landing Page Html-Css',
+      img: '../../../assets/photos/reactPic.jpeg',
+    },
+    {
+      link: '',
+      nombre: 'Survey Form Html-Css',
+      img: '../../../assets/photos/reactPic.jpeg',
+    },
+    {
+      link: '',
+      nombre: 'proyecto',
+      img: '../../../assets/photos/reactPic.jpeg',
+    },
+    {
+      link: '',
+      nombre: 'proyecto',
+      img: '../../../assets/photos/reactPic.jpeg',
+    },
+  ];
   databaseService = inject(DatabaseService);
 
   ngOnInit() {

@@ -7,12 +7,14 @@
       <div class="project-grid">
         <div *ngFor="let project of projects">
           <div class="card-container">
-            <img mat-card-avatar class="project-img" src="{{ project.img }}" />
             <a href="{{ project.link }}" target="_blank">
-              <p class="project-name">
-                <span class="code">&lt;</span> {{ project.nombre }}
-                <span class="code">&#47;&gt;</span>
-              </p>
+              <mat-card class="card">
+                <mat-card-title class="card-title"
+                  ><span class="code">&lt;</span> {{ project.nombre }}
+                  <span class="code">&#47;&gt;</span></mat-card-title
+                >
+                <img mat-card-image class="" src="{{ project.img }}" />
+              </mat-card>
             </a>
           </div>
         </div>
