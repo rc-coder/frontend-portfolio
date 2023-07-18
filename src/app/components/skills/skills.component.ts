@@ -17,7 +17,10 @@ import {
   faScrewdriverWrench,
   faPowerOff,
   faCodeBranch,
+  faPen,
+  faTrashCan,
 } from '@fortawesome/free-solid-svg-icons';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-skills',
@@ -25,30 +28,65 @@ import {
   styleUrls: ['./skills.component.scss'],
 })
 export class SkillsComponent {
-  tecnologias: any[] = [];
-  databaseService = inject(DatabaseService);
+  tecnologias: Tecnologia[] = [];
+  tecForm: FormGroup = new FormGroup({});
+  isUpdate: boolean = false;
 
-  tecnologiasDob: any[] = [
-    'Styled Components',
-    'Styled Components',
-    'Styled Components',
-    'Styled',
-    'Styled Components',
-    'Styled Components',
-    'Styled Components',
-    'Styled Components',
-    'Styled Components',
-    'Styled Components',
-  ];
+  databaseService = inject(DatabaseService);
 
   ngOnInit(): void {
     this.cargarDatos();
+    this.tecForm = new FormGroup({
+      id: new FormControl(''),
+      nombre: new FormControl(''),
+    });
   }
 
   cargarDatos() {
     this.databaseService.getTecnologias().subscribe((data) => {
-      this.tecnologias = data;
+      if (data) {
+        this.tecnologias = data;
+      }
     });
+  }
+
+  agregarTec() {
+    this.databaseService
+      .agregarTecnologia(this.tecForm.value)
+      .subscribe((resp) => {
+        this.cargarDatos();
+        if (resp) {
+          this.tecForm.reset();
+        }
+      });
+  }
+
+  editarTec() {
+    this.databaseService
+      .editarTecnologia(this.tecForm.value)
+      .subscribe((resp) => {
+        this.cargarDatos();
+        if (resp) {
+          this.tecForm.reset();
+        }
+      });
+  }
+
+  borrarTec(id: any) {
+    this.databaseService.borrarTecnologia(id).subscribe((resp) => {
+      this.cargarDatos();
+    });
+  }
+
+  newTec() {
+    this.isUpdate = false;
+    this.tecForm.reset();
+  }
+
+  selectTec(item: any) {
+    this.isUpdate = true;
+    this.tecForm.controls['id'].setValue(item.id);
+    this.tecForm.controls['nombre'].setValue(item.nombre);
   }
 
   faHtml5 = faHtml5;
@@ -64,4 +102,6 @@ export class SkillsComponent {
   faScrewdriverWrench = faScrewdriverWrench;
   faPowerOff = faPowerOff;
   faCodeBranch = faCodeBranch;
+  faPen = faPen;
+  faTrashCan = faTrashCan;
 }

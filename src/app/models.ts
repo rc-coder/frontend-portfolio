@@ -17,7 +17,7 @@ export interface Tecnologia {
 
 export interface Project {
   id?: number;
-  name: string;
+  nombre: string;
   img: string;
   link: string;
 }

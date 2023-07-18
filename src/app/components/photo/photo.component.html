@@ -1,9 +1,108 @@
-<a href=""
-  ><mat-card class="photo-container">
-    <div mat-card-avatar class="profile-pic"></div>
-    <mat-card-title class="profile-title"
-      >{{ nombre }} {{ apellido }}</mat-card-title
-    >
-    <mat-card-subtitle class="profile-subtitle">{{ titulo }}</mat-card-subtitle>
+<div>
+  <mat-card class="photo-container">
+    <a href=""> <div mat-card-avatar class="profile-pic"></div></a>
+    <div *ngFor="let persona of datosPersona">
+      <div class="text-container">
+        <mat-card-title class="profile-title"
+          >{{ persona.nombre }} {{ persona.apellido }}</mat-card-title
+        >
+        <div class="icon-container">
+          <!-- <fa-icon
+            [icon]="faPen"
+            data-bs-toggle="modal"
+            data-bs-target="#personaModal"
+            class="icon icon-name"
+            (click)="selectItem(persona)"
+          ></fa-icon> -->
+        </div>
+      </div>
+      <div class="text-container">
+        <mat-card-subtitle class="profile-subtitle">{{
+          persona.titulo
+        }}</mat-card-subtitle>
+        <div class="icon-container">
+          <!-- <fa-icon
+            [icon]="faPen"
+            data-bs-toggle="modal"
+            data-bs-target="#personaModal"
+            class="icon icon-title"
+            (click)="selectItem(persona)"
+          ></fa-icon> -->
+        </div>
+      </div>
+    </div>
   </mat-card>
-</a>
+  <!-- Modal -->
+  <!-- <div
+    class="modal fade"
+    id="personaModal"
+    tabindex="-1"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    role="dialog"
+    aria-labelledby="modalTitleId"
+    aria-hidden="true"
+  >
+    <div
+      class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+      role="document"
+    >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="modalTitleId">Editar</h3>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="personaForm">
+            <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">Nombre</label>
+              <div class="col-sm-10 input-container">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="nombre"
+                />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">Apellido</label>
+              <div class="col-sm-10 input-container">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="nombre"
+                />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">Titulo</label>
+              <div class="col-sm-10 input-container">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="nombre"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            type="submit"
+            class="btn btn-warning"
+            (click)="editarPersona()"
+            data-bs-dismiss="modal"
+          >
+            Actualizar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> -->
+</div>

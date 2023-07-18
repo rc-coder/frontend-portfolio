@@ -14,13 +14,17 @@ section {
   background-color: #ff4554;
   border-bottom: 2px solid var(--grey);
   width: 100%;
-  height: 100vh;
+  height: auto;
+  padding: 50px;
+  @media screen and (max-width: 800px) {
+    padding: 20px;
+  }
 }
 
 .wrapper {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 0 20px 0 20px;
   @media screen and (max-width: 800px) {
     flex-direction: column;
@@ -93,6 +97,14 @@ aside p {
   padding: 10px;
 }
 
+.new-tec {
+  cursor: pointer;
+  transition: all 0.5s;
+  &:hover {
+    color: var(--blue);
+  }
+}
+
 .icon-list {
   width: 100%;
   display: flex;
@@ -102,8 +114,38 @@ aside p {
   padding-top: 10px;
 }
 
-fa-icon {
-  &:hover {
-    color: var(--deep-blue);
+.card-icons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+
+  & .icon {
+    padding: 5px;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all 0.5s;
+    &:last-child {
+      margin-right: 15px;
+    }
+    &:hover {
+      opacity: 1;
+      color: var(--blue);
+    }
+  }
+}
+
+.modal-content {
+  background-color: var(--deep-red);
+  padding: 10px;
+
+  & label {
+    width: 100%;
+    font-weight: bold;
+  }
+
+  & .input-container {
+    width: 100%;
   }
 }

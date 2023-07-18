@@ -6,13 +6,16 @@ section {
     ),
     repeating-linear-gradient(#00c3e3, #00c3e3);
   background-color: #0885a5;
-
   border-bottom: 2px solid var(--grey);
   width: 100%;
-  height: 100vh;
+  padding: 50px;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media screen and (max-width: 980px) {
+    padding: 30px;
+  }
 }
 
 .projects-container {
@@ -23,6 +26,8 @@ section {
 
 .wrapper {
   padding: 0 20px 0 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .divider {
@@ -33,6 +38,7 @@ section {
 .projects-title {
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 h1 {
@@ -49,26 +55,27 @@ h1 {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 10px;
   height: 50%;
+
   @media screen and (max-width: 980px) {
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    justify-items: center;
   }
 }
 
-.card-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+.col {
   margin-top: 20px;
-  transition-property: box-shadow margin-top;
-  transition-duration: 0.1s;
+  height: 200px;
+  @media screen and (max-width: 900px) {
+    height: 150px;
+  }
 }
 
 .card {
   max-width: 250px;
-  border-radius: 10px;
   transition: all 0.5s;
-  background: rgba(65, 69, 72, 0.6);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.25);
@@ -76,39 +83,63 @@ h1 {
     height: 150px;
   }
 
-  & .card-title {
-    display: flex;
-    justify-content: center;
-    font-style: italic;
-    margin-top: 10px;
-    transition: all 0.5s;
-    font-size: small;
-    width: 100%;
-    @media screen and (max-width: 700px) {
-      display: none;
-    }
-  }
-
-  & img {
-    object-fit: cover;
-    padding: 20px;
-    width: 100%;
-    @media screen and (max-width: 600px) {
-      padding: 20px;
-    }
-  }
-
-  & p {
-    text-align: center;
+  & .glass {
+    background: rgba(34, 31, 36, 0.3);
+    -webkit-backdrop-filter: blur(1px);
+    backdrop-filter: blur(1px);
   }
 
   &:hover {
     transform: translate(3px, -3px);
     border: 2px solid var(--deep-red);
-    opacity: 1;
+  }
+}
 
-    .code {
+.card-title-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-title {
+  transition: all 0.5s;
+  cursor: pointer;
+  &:hover {
+    color: var(--deep-red);
+  }
+}
+
+.card-icons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+
+  & .icon {
+    padding: 5px;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all 0.2s;
+    &:hover {
+      opacity: 1;
       color: var(--deep-red);
     }
+  }
+}
+
+.modal-content {
+  background-color: var(--deep-red);
+  padding: 10px;
+
+  & label {
+    width: 100%;
+    font-weight: bold;
+  }
+
+  & .input-container {
+    width: 100%;
   }
 }

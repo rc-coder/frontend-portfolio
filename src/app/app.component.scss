@@ -38,6 +38,7 @@ main {
   background-color: var(--dark-grey);
   height: auto;
   display: none;
+  z-index: 50;
   @media screen and (max-width: 600px) {
     display: block;
   }
@@ -53,7 +54,7 @@ main {
   background-size: cover;
   border: 5px solid var(--black);
   visibility: hidden;
-  z-index: 5;
+  z-index: 55;
   @media screen and (max-width: 600px) {
     visibility: visible;
   }

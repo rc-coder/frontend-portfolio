@@ -1,38 +1,50 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { tecnologiasList } from '../mock-tecnologias';
-import { projectList } from '../mock-projects';
-import { persona } from '../mock-persona';
+import { Persona, Project, Tecnologia } from '../models';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DatabaseService {
-  // private databaseUrl = 'https://portfoliodb-backend.onrender.com/api/db';
+  private databaseUrl = 'https://portfoliodb-backend.onrender.com/api/db';
+  // private databaseUrl = 'localhost:8080/api/db';
   constructor(private http: HttpClient) {}
-  public getPersona(): Observable<any> {
-    return this.http.get<any>(
-      'https://portfoliodb-backend.onrender.com/api/db/ver/persona'
-    );
+
+  //Persona
+  public getPersona(): Observable<Persona[]> {
+    return this.http.get<Persona[]>(this.databaseUrl + '/ver/persona');
   }
-  public getProyectos(): Observable<any> {
-    return this.http.get<any>(
-      'https://portfoliodb-backend.onrender.com/api/db/ver/proyecto'
-    );
+
+  public editarPersona(request: any): Observable<any> {
+    return this.http.put<any>(this.databaseUrl + '/editar/persona', request);
   }
-  public getTecnologias(): Observable<any> {
-    return this.http.get<any>(
-      'https://portfoliodb-backend.onrender.com/api/db/ver/tecnologia'
-    );
+
+  //Projects
+  public getProyectos(): Observable<Project[]> {
+    return this.http.get<Project[]>(this.databaseUrl + '/ver/proyecto');
   }
-  // getTecnologias(): Tecnologia[] {
-  //   return tecnologiasList;
-  // }
-  // getProyectos(): Project[] {
-  //   return projectList;
-  // }
-  // getPersona(): Persona[] {
-  //   return persona;
-  // }
+  public agregarProyecto(request: any): Observable<any> {
+    return this.http.post<any>(this.databaseUrl + '/new/proyecto', request);
+  }
+  public borrarProyecto(id: number): Observable<any> {
+    return this.http.delete<any>(this.databaseUrl + '/borrar/proyecto/' + id);
+  }
+  public editarProyecto(request: any): Observable<any> {
+    return this.http.put<any>(this.databaseUrl + '/editar/proyecto', request);
+  }
+
+  //Techs
+  public getTecnologias(): Observable<Tecnologia[]> {
+    return this.http.get<Tecnologia[]>(this.databaseUrl + '/ver/tecnologia');
+  }
+  public agregarTecnologia(request: any): Observable<any> {
+    return this.http.post<any>(this.databaseUrl + '/new/tecnologia', request);
+  }
+  public borrarTecnologia(id: number): Observable<any> {
+    return this.http.delete<any>(this.databaseUrl + '/borrar/tecnologia/' + id);
+  }
+  public editarTecnologia(request: any): Observable<any> {
+    return this.http.put<any>(this.databaseUrl + '/editar/tecnologia', request);
+  }
 }

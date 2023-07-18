@@ -1,0 +1,5 @@
+.home-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100%, 100%));
+  background-color: var(--black);
+}

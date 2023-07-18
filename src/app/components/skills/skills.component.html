@@ -26,7 +26,30 @@
             <span class="code">&lt;</span> {{ tecnologia.nombre }}
             <span class="code">&#47;&gt;</span>
           </p>
+          <div class="card-icons">
+            <fa-icon
+              [icon]="faPen"
+              data-bs-toggle="modal"
+              data-bs-target="#tecModal"
+              (click)="selectTec(tecnologia)"
+              class="icon"
+            ></fa-icon>
+            <fa-icon
+              [icon]="faTrashCan"
+              (click)="borrarTec(tecnologia.id)"
+              class="icon"
+            ></fa-icon>
+          </div>
         </div>
+        <p
+          class="tec-name new-tec"
+          data-bs-toggle="modal"
+          data-bs-target="#tecModal"
+          (click)="newTec()"
+        >
+          <span class="code">&lt;</span> nueva +
+          <span class="code">&#47;&gt;</span>
+        </p>
       </div>
 
       <div class="icon-list">
@@ -42,5 +65,73 @@
         <fa-icon [icon]="faPowerOff" size="lg"></fa-icon>
       </div>
     </aside>
+  </div>
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="tecModal"
+    tabindex="-1"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    role="dialog"
+    aria-labelledby="modalTitleId"
+    aria-hidden="true"
+  >
+    <div
+      class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+      role="document"
+    >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 *ngIf="!isUpdate" class="modal-title" id="modalTitleId">
+            Nueva tecnología
+          </h3>
+          <h3 *ngIf="isUpdate" class="modal-title" id="modalTitleId">
+            Editar Tecnología
+          </h3>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="tecForm">
+            <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">Nombre</label>
+              <div class="col-sm-10 input-container">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="nombre"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            *ngIf="!isUpdate"
+            type="submit"
+            class="btn btn-success"
+            data-bs-dismiss="modal"
+            (click)="agregarTec()"
+          >
+            Guardar
+          </button>
+          <button
+            *ngIf="isUpdate"
+            type="submit"
+            class="btn btn-warning"
+            (click)="editarTec()"
+            data-bs-dismiss="modal"
+          >
+            Actualizar
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 </section>

@@ -1,8 +1,10 @@
 .photo-container {
+  position: relative;
   display: flex;
   align-items: center;
   background-color: black;
-  padding: 10px;
+  padding: 20px;
+  height: 100%;
 }
 
 .profile-pic {
@@ -18,14 +20,64 @@
   margin-top: -10px;
   text-align: center;
   font-size: large;
+  text-align: center;
 }
 
 .profile-subtitle {
   color: var(--grey);
   font-style: italic;
   font-weight: 200;
+  text-align: center;
 }
 
 a {
   border: red;
+}
+
+.icon-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.text-container {
+  &:hover {
+    & .icon {
+      opacity: 1;
+      color: var(--red);
+    }
+  }
+}
+
+.icon {
+  transition: all 0.5s;
+  position: absolute;
+  font-size: 10px;
+  opacity: 0.5;
+  cursor: pointer;
+}
+
+.icon-name {
+  bottom: 40px;
+  right: 10px;
+}
+
+.icon-title {
+  bottom: 10px;
+  right: 20px;
+}
+
+.modal-content {
+  background-color: var(--deep-red);
+  padding: 10px;
+
+  & label {
+    width: 100%;
+    font-weight: bold;
+  }
+
+  & .input-container {
+    width: 100%;
+  }
 }

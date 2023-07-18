@@ -6,17 +6,136 @@
       <br />
       <div class="project-grid">
         <div *ngFor="let project of projects">
-          <div class="card-container">
-            <a href="{{ project.link }}" target="_blank">
-              <mat-card class="card">
-                <mat-card-title class="card-title"
-                  ><span class="code">&lt;</span> {{ project.nombre }}
-                  <span class="code">&#47;&gt;</span></mat-card-title
+          <div class="col">
+            <div
+              class="card h-100 text-bg-dark rounded-4 shadow-lg"
+              style="background-image: url({{ project.img }})"
+            >
+              <div
+                class="d-flex flex-column p-5 pb-3 text-white text-shadow-1 rounded-4 glass card-title-container"
+              >
+                <a href="{{ project.link }}" target="_blank" class="card-title">
+                  <h3 class="display-6 lh-1 fw-bold text-center">
+                    {{ project.nombre }}
+                  </h3></a
                 >
-                <img mat-card-image class="" src="{{ project.img }}" />
-              </mat-card>
-            </a>
+
+                <div class="card-icons">
+                  <fa-icon
+                    [icon]="faPen"
+                    data-bs-toggle="modal"
+                    data-bs-target="#projectModal"
+                    (click)="selectProject(project)"
+                    class="icon"
+                  ></fa-icon>
+                  <fa-icon
+                    [icon]="faTrashCan"
+                    (click)="borrarProyecto(project.id)"
+                    class="icon"
+                  ></fa-icon>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+        <div
+          class="col"
+          data-bs-toggle="modal"
+          data-bs-target="#projectModal"
+          (click)="newProject()"
+        >
+          <div
+            class="card h-100 text-bg-dark rounded-4 shadow-lg"
+            style="background-color: var(--grey)"
+          >
+            <div
+              class="d-flex flex-column p-5 pb-3 text-white text-shadow-1 rounded-4 glass"
+            >
+              <h3
+                class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold text-center card-title"
+              >
+                Nuevo Proyecto
+              </h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div
+    class="modal fade"
+    id="projectModal"
+    tabindex="-1"
+    data-bs-backdrop="static"
+    data-bs-keyboard="false"
+    role="dialog"
+    aria-labelledby="modalTitleId"
+    aria-hidden="true"
+  >
+    <div
+      class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+      role="document"
+    >
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 *ngIf="!isUpdate" class="modal-title" id="modalTitleId">
+            Nuevo Proyecto
+          </h3>
+          <h3 *ngIf="isUpdate" class="modal-title" id="modalTitleId">
+            Editar Proyecto
+          </h3>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="modal"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="projectForm">
+            <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">Nombre</label>
+              <div class="col-sm-10 input-container">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="nombre"
+                />
+              </div>
+            </div>
+            <div class="mb-3 row">
+              <label class="col-sm-2 col-form-label">Url</label>
+              <div class="col-sm-10 input-container">
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="link"
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button
+            *ngIf="!isUpdate"
+            type="submit"
+            class="btn btn-success"
+            data-bs-dismiss="modal"
+            (click)="agregarProyecto()"
+          >
+            Guardar
+          </button>
+          <button
+            *ngIf="isUpdate"
+            type="submit"
+            class="btn btn-warning"
+            data-bs-dismiss="modal"
+            (click)="editarProyecto()"
+          >
+            Actualizar
+          </button>
         </div>
       </div>
     </div>

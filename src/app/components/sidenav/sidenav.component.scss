@@ -16,12 +16,14 @@
   display: flex;
   justify-content: center;
   border-bottom: 0.2px solid var(--deep-red);
+  transition: all 0.5s;
   &:hover {
     color: var(--deep-blue);
   }
 }
 
 .icon {
+  transition: all 0.5s;
   &:hover {
     color: var(--deep-blue);
   }
@@ -40,7 +42,8 @@
 .social-icons {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 40px;
   width: 100%;
 }
 
